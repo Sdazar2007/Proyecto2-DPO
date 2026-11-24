@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>30</y>
+      <w>482</w>
+      <h>267</h>
+    </coordinates>
+    <panel_attributes>ServicioAdministrativo
+--
+- turnos : List&lt;Turno&gt;
+- sugerencias : List&lt;Sugerencia&gt;
+- diasAbiertos : EnumSet&lt;DayOfWeek&gt;
+- apertura : LocalTime
+- cierre : LocalTime
+--
+- exigir(boolean, String) : void
+- admin(Administrador) : void
+- dia(String) : DayOfWeek
+- hora(String) : LocalTime
+- validarTurno(Turno) : void
+- solapaEmpleado(Turno, Turno) : boolean
++ enTurno(Empleado, LocalDate) : boolean
++ crearTurno(Administrador, Empleado, String, String, String) : Turno</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>871</x>
+      <y>840</y>
+      <w>214</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Usuario
+--
+- login : String
+- activo : boolean
+- password : String
+--
++ builder() : Usuario$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>828</x>
+      <y>665</y>
+      <w>300</w>
+      <h>67</h>
+    </coordinates>
+    <panel_attributes>Administrador
+--
++ nuevoBuilder() : Administrador$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>515</x>
+      <y>649</y>
+      <w>272</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Empleado
+--
+- codigoDescuento : String
+--
++ nuevoBuilder() : Empleado$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>432</y>
+      <w>353</w>
+      <h>67</h>
+    </coordinates>
+    <panel_attributes>Entrenador
+--
++ nuevoBuilderEntrenador() : Entrenador$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>954</x>
+      <y>432</y>
+      <w>399</w>
+      <h>67</h>
+    </coordinates>
+    <panel_attributes>Fisioterapeuta
+--
++ nuevoBuilderFisioterapeuta() : Fisioterapeuta$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1169</x>
+      <y>634</y>
+      <w>296</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Socio
+--
+- edad : int
+- puntos : int
+- inscripciones : List&lt;InscripcionEquipo&gt;
+--
++ newBuilder() : Socio$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>43</x>
+      <y>386</y>
+      <w>199</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Turno
+--
+- dia : String
+- horaInicio : String
+- horaFin : String
+- empleado : Empleado
+- activo : boolean
+--
++ builder() : Turno$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>281</x>
+      <y>386</y>
+      <w>238</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Sugerencia
+--
+- nombre : String
+- estado : String
+- proponente : Empleado
+- tipo : String
+- motivo : String
+--
++ builder() : Sugerencia$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>99</y>
+      <w>221</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Producto
+--
+- nombre : String
+- precio : double
+- activo : boolean
+--
++ builder() : Producto$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>282</y>
+      <w>68</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-
+turnos</panel_attributes>
+    <additional_attributes>53;15;40;45;27;76;15;104</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>313</x>
+      <y>282</y>
+      <w>68</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-
+sugerencias</panel_attributes>
+    <additional_attributes>15;15;28;45;42;76;53;104</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>963</x>
+      <y>717</y>
+      <w>30</w>
+      <h>123</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;15;40;15;76;15;108</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>733</y>
+      <w>165</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;55;40;105;71;150;99</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>659</x>
+      <y>484</y>
+      <w>80</w>
+      <h>167</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>65;15;52;50;31;108;15;152</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>754</x>
+      <y>484</y>
+      <w>344</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>329;15;248;52;113;115;15;160</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1081</x>
+      <y>748</y>
+      <w>145</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>130;15;93;37;52;61;15;84</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>227</x>
+      <y>517</y>
+      <w>317</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=-
+empleado</panel_attributes>
+    <additional_attributes>15;15;27;23;35;28;35;28;35;28;187;87;302;132</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>471</x>
+      <y>531</y>
+      <w>143</w>
+      <h>134</h>
+    </coordinates>
+    <panel_attributes>lt=-
+proponente</panel_attributes>
+    <additional_attributes>15;15;53;49;95;89;128;119</additional_attributes>
+  </element>
+</diagram>

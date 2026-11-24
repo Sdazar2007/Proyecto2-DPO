@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>343</x>
+      <y>295</y>
+      <w>342</w>
+      <h>481</h>
+    </coordinates>
+    <panel_attributes>/ConsolaBase/
+--
+# club : ClubSeneca
+# scanner : Scanner
+# entrada : EntradaConsola
+# usuarioActual : Usuario
+- ruta : Path
+--
+# admite(Usuario) : boolean
+# mostrarMenu() : void
+# puedeInicializar() : boolean
+# ejecutar() : void
+# autenticar() : boolean
+# texto(String) : String
+# entero(String, int, int) : int
+# decimal(String) : double
+# si(String) : boolean
+# seguro(Runnable) : void
+# elegir(List&lt;T&gt;, Function&lt;T, String&gt;) : &lt;T&gt; T
+# usuario() : Usuario
+# socio() : Socio
+# equipo() : Equipo
+# instalacion() : Instalacion
+# torneo() : Torneo
+# deporte() : Deporte
+# consultarTorneos() : void
+# inscribirTorneo() : void
+# desinscribirTorneo() : void
+# consultarBonos() : void
+# comprar() : void</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>155</x>
+      <y>68</y>
+      <w>212</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>ConsolaSocio
+--
++ main(String[]) : void
+# admite(Usuario) : boolean
++ mostrarMenu() : void
+- accionesSocio(int) : void</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>53</y>
+      <w>212</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>ConsolaEmpleado
+--
++ main(String[]) : void
+# admite(Usuario) : boolean
++ mostrarMenu() : void
+- entrenador() : Entrenador
+- entrenamiento() : void
+- evaluar() : void</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>661</x>
+      <y>30</y>
+      <w>221</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>ConsolaAdmin
+--
++ main(String[]) : void
+# admite(Usuario) : boolean
+# puedeInicializar() : boolean
+- admin() : Administrador
++ mostrarMenu() : void
+- acciones(int) : void
+- crearTorneo() : void
+- alta() : void
+- producto() : Producto</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>949</y>
+      <w>238</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>EntradaConsola
+--
+- scanner : Scanner
+- salida : PrintStream
+--
++ leerTexto(String) : String
++ leerEntero(String, int, int) : int
++ leerDecimal(String) : double</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>865</y>
+      <w>412</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>ClubSeneca
+--
+- deportivo : ServicioDeportivo
+- academias : ServicioAcademias
+- comercial : ServicioComercial
+- administrativo : ServicioAdministrativo
+- torneos : ServicioTorneos
+- usuarios : Map&lt;String, Usuario&gt;
+- salts : Map&lt;String, String&gt;
+- historial : List&lt;String&gt;
+--
+- exigir(boolean, String) : void
+- login(String) : String
+- hash(String, String) : String
+- registrar(Usuario) : void
++ crearAdministradorInicial(String, String) : Administrador
+- autorizar(Administrador) : void
++ registrarUsuario(Administrador, Usuario) : void
++ autenticar(String, String) : Usuario</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>1266</y>
+      <w>214</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Usuario
+--
+- login : String
+- activo : boolean
+- password : String
+--
++ builder() : Usuario$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>188</x>
+      <y>748</y>
+      <w>170</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-
+entrada</panel_attributes>
+    <additional_attributes>155;15;105;82;52;151;15;201</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>499</x>
+      <y>761</y>
+      <w>30</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-
+club</panel_attributes>
+    <additional_attributes>15;15;15;45;15;75;15;104</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>664</x>
+      <y>761</y>
+      <w>91</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>lt=-
+usuarioActual</panel_attributes>
+    <additional_attributes>15;15;50;65;76;104;76;104;76;104;76;416;76;416;76;416;51;463;29;505</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>166</y>
+      <w>93</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;32;43;54;79;78;117</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>499</x>
+      <y>181</y>
+      <w>30</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;15;40;15;69;15;100</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>657</x>
+      <y>204</y>
+      <w>70</w>
+      <h>94</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>55;15;43;35;29;56;15;79</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>572</x>
+      <y>1163</y>
+      <w>72</w>
+      <h>118</h>
+    </coordinates>
+    <panel_attributes>lt=-
+usuarios</panel_attributes>
+    <additional_attributes>15;15;30;46;44;77;57;103</additional_attributes>
+  </element>
+</diagram>

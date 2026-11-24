@@ -1,0 +1,36 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.4", ranksep="0.75", fontname="DejaVu Sans", splines=polyline];
+node [shape=plain,fontname="DejaVu Sans", fontsize=10];
+edge [fontname="DejaVu Sans", fontsize=9, color="#526478"];
+ServicioAcademias [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ServicioAcademias</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- inscripciones : List&lt;InscripcionIndividual&gt;<BR ALIGN="LEFT"/>- instalaciones : List&lt;Instalacion&gt;<BR ALIGN="LEFT"/>- reservas : List&lt;Reserva&gt;<BR ALIGN="LEFT"/>- partidos : List&lt;PartidoPractica&gt;<BR ALIGN="LEFT"/>- estadisticas : List&lt;Object&gt;<BR ALIGN="LEFT"/>- sesiones : List&lt;SesionEntrenamiento&gt;<BR ALIGN="LEFT"/>- historialRanking : Map&lt;InscripcionIndividual, List&lt;Integer&gt;&gt;<BR ALIGN="LEFT"/>- cuposSimultaneos : Map&lt;String, Integer&gt;<BR ALIGN="LEFT"/>- sociosEntrenadores : Set&lt;Socio&gt;</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- require(boolean, String) : void<BR ALIGN="LEFT"/>- norm(String) : String<BR ALIGN="LEFT"/>+ disciplina(Deporte) : String<BR ALIGN="LEFT"/>+ nivel(String) : String<BR ALIGN="LEFT"/>- mismoIndividual(Instalacion, String) : boolean<BR ALIGN="LEFT"/>- peso(String) : int<BR ALIGN="LEFT"/>- momento(String) : LocalDateTime<BR ALIGN="LEFT"/>- solapa(LocalDateTime, int, LocalDateTime, int) : boolean</TD></TR></TABLE>>];
+InscripcionIndividual [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>InscripcionIndividual</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- nivel : String<BR ALIGN="LEFT"/>- rankingELO : int<BR ALIGN="LEFT"/>- socio : Socio<BR ALIGN="LEFT"/>- deporte : Deporte</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : InscripcionIndividual$Builder</TD></TR></TABLE>>];
+Instalacion [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Instalacion</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- nombre : String<BR ALIGN="LEFT"/>- tipo : String<BR ALIGN="LEFT"/>- capacidad : int<BR ALIGN="LEFT"/>- deporte : Deporte<BR ALIGN="LEFT"/>- techada : boolean<BR ALIGN="LEFT"/>- activa : boolean</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Instalacion$Builder</TD></TR></TABLE>>];
+Reserva [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Reserva</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- bloqueHorario : String<BR ALIGN="LEFT"/>- numeroJugadores : int<BR ALIGN="LEFT"/>- modalidad : String<BR ALIGN="LEFT"/>- responsable : Socio<BR ALIGN="LEFT"/>- instalacion : Instalacion<BR ALIGN="LEFT"/>- participantes : List&lt;Socio&gt;<BR ALIGN="LEFT"/>- cancelada : boolean</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Reserva$Builder</TD></TR></TABLE>>];
+PartidoPractica [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>PartidoPractica</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- fecha : Date<BR ALIGN="LEFT"/>- deporte : Deporte<BR ALIGN="LEFT"/>- instalacion : Instalacion<BR ALIGN="LEFT"/>- participantes : List&lt;Socio&gt;<BR ALIGN="LEFT"/>- ganadores : List&lt;Socio&gt;<BR ALIGN="LEFT"/>- finalizado : boolean</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : PartidoPractica$Builder</TD></TR></TABLE>>];
+Partido [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Partido</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- fecha : Date<BR ALIGN="LEFT"/>- marcador : String<BR ALIGN="LEFT"/>- escenario : Escenario</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Partido$Builder</TD></TR></TABLE>>];
+Deporte [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Deporte</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- nombre : String</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Deporte$Builder</TD></TR></TABLE>>];
+Socio [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Socio</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- edad : int<BR ALIGN="LEFT"/>- puntos : int<BR ALIGN="LEFT"/>- inscripciones : List&lt;InscripcionEquipo&gt;</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ newBuilder() : Socio$Builder</TD></TR></TABLE>>];
+Entrenador [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Entrenador</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ nuevoBuilderEntrenador() : Entrenador$Builder</TD></TR></TABLE>>];
+SesionEntrenamiento [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>SesionEntrenamiento</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- fecha : Date<BR ALIGN="LEFT"/>- hora : String<BR ALIGN="LEFT"/>- duracion : int<BR ALIGN="LEFT"/>- entrenador : Entrenador<BR ALIGN="LEFT"/>- instalacion : Instalacion<BR ALIGN="LEFT"/>- convocados : List&lt;Socio&gt;<BR ALIGN="LEFT"/>- evaluaciones : List&lt;Evaluacion&gt;</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : SesionEntrenamiento$Builder</TD></TR></TABLE>>];
+Evaluacion [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Evaluacion</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- asistencia : String<BR ALIGN="LEFT"/>- notaDesempeno : double<BR ALIGN="LEFT"/>- comentario : String<BR ALIGN="LEFT"/>- socio : Socio<BR ALIGN="LEFT"/>- sesion : SesionEntrenamiento</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Evaluacion$Builder</TD></TR></TABLE>>];
+ServicioAcademias -> InscripcionIndividual [arrowhead=none,label="inscripciones, historialRanking"];
+ServicioAcademias -> Instalacion [arrowhead=none,label="instalaciones"];
+ServicioAcademias -> Reserva [arrowhead=none,label="reservas"];
+ServicioAcademias -> PartidoPractica [arrowhead=none,label="partidos"];
+ServicioAcademias -> SesionEntrenamiento [arrowhead=none,label="sesiones"];
+ServicioAcademias -> Socio [arrowhead=none,label="sociosEntrenadores"];
+InscripcionIndividual -> Socio [arrowhead=none,label="socio"];
+InscripcionIndividual -> Deporte [arrowhead=none,label="deporte"];
+Instalacion -> Deporte [arrowhead=none,label="deporte"];
+Reserva -> Socio [arrowhead=none,label="responsable, participantes"];
+Reserva -> Instalacion [arrowhead=none,label="instalacion"];
+PartidoPractica -> Deporte [arrowhead=none,label="deporte"];
+PartidoPractica -> Instalacion [arrowhead=none,label="instalacion"];
+PartidoPractica -> Socio [arrowhead=none,label="participantes, ganadores"];
+SesionEntrenamiento -> Entrenador [arrowhead=none,label="entrenador"];
+SesionEntrenamiento -> Instalacion [arrowhead=none,label="instalacion"];
+SesionEntrenamiento -> Socio [arrowhead=none,label="convocados"];
+SesionEntrenamiento -> Evaluacion [arrowhead=none,label="evaluaciones"];
+Evaluacion -> Socio [arrowhead=none,label="socio"];
+Evaluacion -> SesionEntrenamiento [arrowhead=none,label="sesion"];
+}

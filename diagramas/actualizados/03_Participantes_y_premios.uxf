@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1372</x>
+      <y>497</y>
+      <w>350</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>ParticipanteTorneo
+--
+- id : String
+- nombre : String
+- usuarios : List&lt;Usuario&gt;
+- equipo : Equipo
+--
++ jugadores(List&lt;Usuario&gt;) : ParticipanteTorneo
++ equipo(Equipo) : ParticipanteTorneo
++ contiene(Usuario) : boolean
++ tieneEmpleado() : boolean</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>782</x>
+      <y>799</y>
+      <w>214</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Usuario
+--
+- login : String
+- activo : boolean
+- password : String
+--
++ builder() : Usuario$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>527</y>
+      <w>296</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Socio
+--
+- edad : int
+- puntos : int
+- inscripciones : List&lt;InscripcionEquipo&gt;
+--
++ newBuilder() : Socio$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>367</x>
+      <y>542</y>
+      <w>272</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Empleado
+--
+- codigoDescuento : String
+--
++ nuevoBuilder() : Empleado$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>551</y>
+      <w>199</w>
+      <h>82</h>
+    </coordinates>
+    <panel_attributes>Estudiante
+--
+- codigoEstudiantil : String
+- matriculado : boolean</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>551</y>
+      <w>158</w>
+      <h>82</h>
+    </coordinates>
+    <panel_attributes>Externo
+--
+- nombre : String
+- documento : String</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1399</x>
+      <y>776</y>
+      <w>296</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>Equipo
+--
+- nombre : String
+- activo : boolean
+- cupoMaximo : int
+- deporte : Deporte
+- categoria : Categoria
+- inscripciones : List&lt;InscripcionEquipo&gt;
+--
++ builder() : Equipo$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1092</x>
+      <y>279</y>
+      <w>267</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>TorneoRecreativo
+--
+- porcentajeDescuento : double
+- bonos : List&lt;BonoDescuento&gt;
+--
+~ tarifa(ParticipanteTorneo) : double
+~ otorgar(ParticipanteTorneo) : void</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1414</x>
+      <y>30</y>
+      <w>267</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>TorneoCompetitivo
+--
+- tarifaInscripcion : double
+- premios : List&lt;PremioEfectivo&gt;
+--
+~ tarifa(ParticipanteTorneo) : double
++ calcularRecaudacion() : double
++ calcularPremio() : double
+~ otorgar(ParticipanteTorneo) : void</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1118</x>
+      <y>512</y>
+      <w>214</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>BonoDescuento
+--
+- codigo : String
+- propietario : Usuario
+- porcentaje : double
+- utilizado : boolean
+--
++ estaDisponible() : boolean
+~ redimir() : void</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1423</x>
+      <y>279</y>
+      <w>249</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>PremioEfectivo
+--
+- participante : ParticipanteTorneo
+- monto : double
+- entregado : boolean
+--
+~ marcarEntregado() : void</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>981</x>
+      <y>663</y>
+      <w>406</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=-
+usuarios</panel_attributes>
+    <additional_attributes>391;15;379;21;372;24;372;24;372;24;152;107;15;159</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1532</x>
+      <y>672</y>
+      <w>30</w>
+      <h>118</h>
+    </coordinates>
+    <panel_attributes>lt=-
+equipo</panel_attributes>
+    <additional_attributes>15;15;15;44;15;75;15;103</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>276</x>
+      <y>642</y>
+      <w>507</w>
+      <h>197</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;45;32;70;45;70;45;70;45;332;130;492;182</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>557</x>
+      <y>626</y>
+      <w>245</w>
+      <h>179</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;75;57;162;117;230;164</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>618</y>
+      <w>92</w>
+      <h>183</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;31;55;57;118;77;168</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>905</x>
+      <y>618</y>
+      <w>92</w>
+      <h>183</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>77;15;61;55;35;118;15;168</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1210</x>
+      <y>410</y>
+      <w>30</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+bonos</panel_attributes>
+    <additional_attributes>15;15;15;43;15;74;15;102</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1532</x>
+      <y>192</y>
+      <w>30</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+premios</panel_attributes>
+    <additional_attributes>15;15;15;39;15;64;15;87</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>953</x>
+      <y>657</y>
+      <w>188</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=-
+propietario</panel_attributes>
+    <additional_attributes>173;15;123;55;62;104;15;141</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1532</x>
+      <y>393</y>
+      <w>30</w>
+      <h>118</h>
+    </coordinates>
+    <panel_attributes>lt=-
+participante</panel_attributes>
+    <additional_attributes>15;15;15;42;15;74;15;103</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,24 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.4", ranksep="0.75", fontname="DejaVu Sans", splines=polyline];
+node [shape=plain,fontname="DejaVu Sans", fontsize=10];
+edge [fontname="DejaVu Sans", fontsize=9, color="#526478"];
+ServicioAdministrativo [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ServicioAdministrativo</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- turnos : List&lt;Turno&gt;<BR ALIGN="LEFT"/>- sugerencias : List&lt;Sugerencia&gt;<BR ALIGN="LEFT"/>- diasAbiertos : EnumSet&lt;DayOfWeek&gt;<BR ALIGN="LEFT"/>- apertura : LocalTime<BR ALIGN="LEFT"/>- cierre : LocalTime</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- exigir(boolean, String) : void<BR ALIGN="LEFT"/>- admin(Administrador) : void<BR ALIGN="LEFT"/>- dia(String) : DayOfWeek<BR ALIGN="LEFT"/>- hora(String) : LocalTime<BR ALIGN="LEFT"/>- validarTurno(Turno) : void<BR ALIGN="LEFT"/>- solapaEmpleado(Turno, Turno) : boolean<BR ALIGN="LEFT"/>+ enTurno(Empleado, LocalDate) : boolean<BR ALIGN="LEFT"/>+ crearTurno(Administrador, Empleado, String, String, String) : Turno</TD></TR></TABLE>>];
+Usuario [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Usuario</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- login : String<BR ALIGN="LEFT"/>- activo : boolean<BR ALIGN="LEFT"/>- password : String</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Usuario$Builder</TD></TR></TABLE>>];
+Administrador [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Administrador</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ nuevoBuilder() : Administrador$Builder</TD></TR></TABLE>>];
+Empleado [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Empleado</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- codigoDescuento : String</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ nuevoBuilder() : Empleado$Builder</TD></TR></TABLE>>];
+Entrenador [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Entrenador</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ nuevoBuilderEntrenador() : Entrenador$Builder</TD></TR></TABLE>>];
+Fisioterapeuta [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Fisioterapeuta</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ nuevoBuilderFisioterapeuta() : Fisioterapeuta$Builder</TD></TR></TABLE>>];
+Socio [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Socio</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- edad : int<BR ALIGN="LEFT"/>- puntos : int<BR ALIGN="LEFT"/>- inscripciones : List&lt;InscripcionEquipo&gt;</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ newBuilder() : Socio$Builder</TD></TR></TABLE>>];
+Turno [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Turno</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- dia : String<BR ALIGN="LEFT"/>- horaInicio : String<BR ALIGN="LEFT"/>- horaFin : String<BR ALIGN="LEFT"/>- empleado : Empleado<BR ALIGN="LEFT"/>- activo : boolean</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Turno$Builder</TD></TR></TABLE>>];
+Sugerencia [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Sugerencia</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- nombre : String<BR ALIGN="LEFT"/>- estado : String<BR ALIGN="LEFT"/>- proponente : Empleado<BR ALIGN="LEFT"/>- tipo : String<BR ALIGN="LEFT"/>- motivo : String</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Sugerencia$Builder</TD></TR></TABLE>>];
+Producto [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>Producto</B></TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">- nombre : String<BR ALIGN="LEFT"/>- precio : double<BR ALIGN="LEFT"/>- activo : boolean</TD></TR><TR><TD ALIGN="LEFT" BALIGN="LEFT">+ builder() : Producto$Builder</TD></TR></TABLE>>];
+ServicioAdministrativo -> Turno [arrowhead=none,label="turnos"];
+ServicioAdministrativo -> Sugerencia [arrowhead=none,label="sugerencias"];
+Administrador -> Usuario [arrowhead=empty,label=""];
+Empleado -> Usuario [arrowhead=empty,label=""];
+Entrenador -> Empleado [arrowhead=empty,label=""];
+Fisioterapeuta -> Empleado [arrowhead=empty,label=""];
+Socio -> Usuario [arrowhead=empty,label=""];
+Turno -> Empleado [arrowhead=none,label="empleado"];
+Sugerencia -> Empleado [arrowhead=none,label="proponente"];
+}

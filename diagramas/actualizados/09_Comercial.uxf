@@ -1,0 +1,344 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>30</y>
+      <w>425</w>
+      <h>282</h>
+    </coordinates>
+    <panel_attributes>ServicioComercial
+--
+- catalogo : List&lt;Producto&gt;
+- ventas : List&lt;Venta&gt;
+- existencias : Map&lt;ArticuloTienda, Map&lt;String, Integer&gt;&gt;
+- reabastecimientos : List&lt;Reabastecimiento&gt;
+- portadoresBebidaCaliente : Set&lt;Socio&gt;
+- avisosAlergenos : List&lt;String&gt;
+--
+- exigir(boolean, String) : void
+- dinero(double) : BigDecimal
+- redondear(BigDecimal) : BigDecimal
+- nombre(String) : String
++ registrarProducto(Producto) : void
++ stock(ArticuloTienda, String) : int
++ reabastecer(ArticuloTienda, int, String) : void
++ mover(ArticuloTienda, String, String, int) : void</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>461</x>
+      <y>944</y>
+      <w>221</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Producto
+--
+- nombre : String
+- precio : double
+- activo : boolean
+--
++ builder() : Producto$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>102</x>
+      <y>734</y>
+      <w>303</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>ArticuloTienda
+--
+- categoria : String
+- cantidad : int
+--
++ nuevoBuilder() : ArticuloTienda$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>446</x>
+      <y>741</y>
+      <w>251</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Bebida
+--
+- esCaliente : boolean
+--
++ nuevoBuilder() : Bebida$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>741</y>
+      <w>246</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Snack
+--
+- alergenos : String
+--
++ nuevoBuilder() : Snack$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1034</x>
+      <y>401</y>
+      <w>200</w>
+      <h>236</h>
+    </coordinates>
+    <panel_attributes>Venta
+--
+- fecha : Date
+- subtotal : double
+- descuento : double
+- impuesto : double
+- total : double
+- propina : double
+- rubro : String
+- comprador : Usuario
+- items : List&lt;ItemVenta&gt;
+- puntosRedimidos : int
+--
++ builder() : Venta$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1024</x>
+      <y>726</y>
+      <w>232</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>ItemVenta
+--
+- cantidad : int
+- producto : Producto
+- precioUnitario : double
+--
++ builder() : ItemVenta$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>447</y>
+      <w>285</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Reabastecimiento
+--
+- fecha : Date
+- cantidad : int
+- articulo : ArticuloTienda
+- ubicacion : String
+--
++ builder() : Reabastecimiento$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>495</x>
+      <y>91</y>
+      <w>261</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>ReporteVentas
+--
+- periodo : String
+- total : double
+- rubro : String
+- desde : Date
+- hasta : Date
+--
++ builder() : ReporteVentas$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1302</x>
+      <y>726</y>
+      <w>214</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Usuario
+--
+- login : String
+- activo : boolean
+- password : String
+--
++ builder() : Usuario$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1274</x>
+      <y>470</y>
+      <w>272</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Empleado
+--
+- codigoDescuento : String
+--
++ nuevoBuilder() : Empleado$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>66</x>
+      <y>297</y>
+      <w>410</w>
+      <h>691</h>
+    </coordinates>
+    <panel_attributes>lt=-
+catalogo</panel_attributes>
+    <additional_attributes>135;15;88;179;15;429;15;429;15;429;15;558;15;558;15;558;250;631;395;676</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>215</x>
+      <y>298</y>
+      <w>45</w>
+      <h>451</h>
+    </coordinates>
+    <panel_attributes>lt=-
+existencias</panel_attributes>
+    <additional_attributes>20;15;17;62;15;103;15;103;15;103;15;339;15;339;15;339;23;392;30;436</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>285</y>
+      <w>609</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-
+ventas</panel_attributes>
+    <additional_attributes>15;15;27;22;34;27;34;27;34;27;409;143;594;201</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>316</x>
+      <y>297</y>
+      <w>115</w>
+      <h>164</h>
+    </coordinates>
+    <panel_attributes>lt=-
+reabastecimientos</panel_attributes>
+    <additional_attributes>15;15;44;61;76;111;100;149</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>321</x>
+      <y>833</y>
+      <w>160</w>
+      <h>118</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;55;42;103;74;145;103</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>557</x>
+      <y>825</y>
+      <w>30</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;15;41;15;75;15;105</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>653</x>
+      <y>825</y>
+      <w>158</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>143;15;105;43;57;79;15;111</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1122</x>
+      <y>622</y>
+      <w>32</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-
+items</panel_attributes>
+    <additional_attributes>15;15;16;45;16;77;17;104</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1219</x>
+      <y>603</y>
+      <w>140</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=-
+comprador</panel_attributes>
+    <additional_attributes>15;15;52;51;92;90;125;123</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>667</x>
+      <y>831</y>
+      <w>371</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=-
+producto</panel_attributes>
+    <additional_attributes>356;15;344;21;336;24;336;24;336;24;143;92;15;137</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>282</x>
+      <y>576</y>
+      <w>140</w>
+      <h>172</h>
+    </coordinates>
+    <panel_attributes>lt=-
+articulo</panel_attributes>
+    <additional_attributes>125;15;91;59;47;116;15;157</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1395</x>
+      <y>553</y>
+      <w>31</w>
+      <h>173</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>16;15;16;55;15;112;15;158</additional_attributes>
+  </element>
+</diagram>

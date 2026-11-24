@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>724</x>
+      <y>281</y>
+      <w>288</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>EstadisticaJugador
+--
+- socio : Socio
+- partido : Partido
+--
++ builder() : EstadisticaJugador$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>351</x>
+      <y>30</y>
+      <w>307</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>EstadisticaFutbol
+--
+- goles : int
+- asistencias : int
+- amarillas : int
+- rojas : int
+--
++ newBuilder() : EstadisticaFutbol$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>698</x>
+      <y>45</y>
+      <w>340</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>EstadisticaBaloncesto
+--
+- puntos : int
+- rebotes : int
+--
++ newBuilder() : EstadisticaBaloncesto$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1079</x>
+      <y>45</y>
+      <w>319</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>EstadisticaVoleibol
+--
+- aces : int
+- bloqueos : int
+--
++ newBuilder() : EstadisticaVoleibol$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>251</y>
+      <w>307</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>EstadisticaTenisPadel
+--
+- setsGanados : int
+- gamesGanados : int
+- aces : int
+- erroresNoForzados : int
+- socio : Socio
+- partido : PartidoPractica
+--
++ builder() : EstadisticaTenisPadel$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>377</x>
+      <y>266</y>
+      <w>307</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>EstadisticaTenisMesa
+--
+- setsGanados : int
+- puntosTotales : int
+- socio : Socio
+- partido : PartidoPractica
+--
++ builder() : EstadisticaTenisMesa$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>383</x>
+      <y>515</y>
+      <w>296</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Socio
+--
+- edad : int
+- puntos : int
+- inscripciones : List&lt;InscripcionEquipo&gt;
+--
++ newBuilder() : Socio$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>764</x>
+      <y>515</y>
+      <w>208</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>Partido
+--
+- fecha : Date
+- marcador : String
+- escenario : Escenario
+--
++ builder() : Partido$Builder</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>606</x>
+      <y>381</y>
+      <w>198</w>
+      <h>149</h>
+    </coordinates>
+    <panel_attributes>lt=-
+socio</panel_attributes>
+    <additional_attributes>183;15;133;51;67;97;15;134</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>853</x>
+      <y>381</y>
+      <w>30</w>
+      <h>149</h>
+    </coordinates>
+    <panel_attributes>lt=-
+partido</panel_attributes>
+    <additional_attributes>15;15;15;51;15;97;15;134</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>160</y>
+      <w>184</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;64;47;122;83;169;114</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>853</x>
+      <y>144</y>
+      <w>30</w>
+      <h>137</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>15;15;15;47;15;88;15;122</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>953</x>
+      <y>144</y>
+      <w>212</w>
+      <h>145</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>197;15;142;49;72;94;15;130</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>411</y>
+      <w>159</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-
+socio</panel_attributes>
+    <additional_attributes>15;15;58;44;105;76;144;104</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>396</y>
+      <w>30</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=-
+socio</panel_attributes>
+    <additional_attributes>15;15;15;48;15;87;15;118</additional_attributes>
+  </element>
+</diagram>

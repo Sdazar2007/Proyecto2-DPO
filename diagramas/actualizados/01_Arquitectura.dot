@@ -1,0 +1,26 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.4", ranksep="0.75", fontname="DejaVu Sans", splines=polyline];
+node [shape=plain,fontname="DejaVu Sans", fontsize=10];
+edge [fontname="DejaVu Sans", fontsize=9, color="#526478"];
+ConsolaSocio [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ConsolaSocio</B></TD></TR></TABLE>>];
+ConsolaEmpleado [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ConsolaEmpleado</B></TD></TR></TABLE>>];
+ConsolaAdmin [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ConsolaAdmin</B></TD></TR></TABLE>>];
+ConsolaBase [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B><I>ConsolaBase</I></B></TD></TR></TABLE>>];
+EntradaConsola [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>EntradaConsola</B></TD></TR></TABLE>>];
+ClubSeneca [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ClubSeneca</B></TD></TR></TABLE>>];
+ServicioDeportivo [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ServicioDeportivo</B></TD></TR></TABLE>>];
+ServicioAcademias [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ServicioAcademias</B></TD></TR></TABLE>>];
+ServicioComercial [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ServicioComercial</B></TD></TR></TABLE>>];
+ServicioAdministrativo [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ServicioAdministrativo</B></TD></TR></TABLE>>];
+ServicioTorneos [label=<<TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#64748B"><TR><TD BGCOLOR="#E5EEF7"><B>ServicioTorneos</B></TD></TR></TABLE>>];
+ConsolaSocio -> ConsolaBase [arrowhead=empty,label=""];
+ConsolaEmpleado -> ConsolaBase [arrowhead=empty,label=""];
+ConsolaAdmin -> ConsolaBase [arrowhead=empty,label=""];
+ConsolaBase -> ClubSeneca [arrowhead=none,label="club"];
+ConsolaBase -> EntradaConsola [arrowhead=none,label="entrada"];
+ClubSeneca -> ServicioDeportivo [dir=both, arrowtail=diamond, arrowhead=none,label="deportivo"];
+ClubSeneca -> ServicioAcademias [dir=both, arrowtail=diamond, arrowhead=none,label="academias"];
+ClubSeneca -> ServicioComercial [dir=both, arrowtail=diamond, arrowhead=none,label="comercial"];
+ClubSeneca -> ServicioAdministrativo [dir=both, arrowtail=diamond, arrowhead=none,label="administrativo"];
+ClubSeneca -> ServicioTorneos [dir=both, arrowtail=diamond, arrowhead=none,label="torneos"];
+}
