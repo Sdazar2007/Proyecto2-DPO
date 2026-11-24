@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>350</y>
+      <w>170</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>/ConsolaBase/
+--
+# club : ClubSeneca
+# scanner : Scanner
+# usuarioActual : Usuario
+--
+# autenticar() : boolean
+# leerEntero() : int
+# leerTexto() : String
+# leerDecimal() : double
+# cargarDatos() : void
+# guardarDatos() : void
++ /mostrarMenu() : void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>600</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>ConsolaSocio
+--
++ main(args : String[]) : void
++ mostrarMenu() : void
++ gestionarInscripciones() : void
++ consultarTorneos() : void
++ gestionarCompras() : void
++ consultarBonos() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>600</y>
+      <w>220</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ConsolaEmpleado
+--
++ main(args : String[]) : void
++ mostrarMenu() : void
++ consultarTurnos() : void
++ gestionarActividades() : void
++ gestionarInscripciones() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>600</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>ConsolaAdmin
+--
++ main(args : String[]) : void
++ mostrarMenu() : void
++ gestionarUsuarios() : void
++ gestionarTorneos() : void
++ gestionarEmpleados() : void
++ consultarReportes() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>260</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ClubSeneca</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>540</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>540</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>540</y>
+      <w>110</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>280</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
